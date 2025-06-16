@@ -21,6 +21,28 @@ A 2-minute pitch introducing the problem, solution, and Gen-AI relevance is avai
 
 ---
 
+---
+
+## Architecture and Workflow
+
+The following diagrams provide a high-level view of Lazarus' system architecture and end-to-end workflow:
+
+### 🏗️ System Architecture
+
+![System Architecture](Architecture.png)
+
+This diagram shows how various components—OCR, voice assistants, backend APIs, patient apps, and predictive models—interact with the centralized Health Record Vault, ensuring secure and seamless healthcare data flow.
+
+### 🔄 Workflow
+
+![Workflow](WorkFlow.jpeg)
+
+From the patient’s visit to the hospital to follow-up and predictive alerts, this diagram outlines the journey of data through OCR scanning, voice transcription, digital storage, and AI-powered analysis.
+
+---
+
+
+
 ## Framework Document
 
 The full 2-page framework PDF is included in this repository:
