@@ -15,6 +15,9 @@ Lazarus is an AI-first healthcare operating system designed to digitize, unify, 
 
 ## Video Pitch
 
+Watch our in-depth pitch(Resubmission): 
+📺 **Watch here:** [Link](https://youtu.be/zG8_Y0eGt-g)
+
 Watch our 2-minute pitch that outlines the core problem, our Gen-AI-powered solution, and its potential real-world impact:
 
 📺 **Watch here:** https://youtu.be/M_L52M-dmTI?si=hDHIX0M11_pDzJzH
