@@ -62,7 +62,7 @@ It goes beyond basic OCR by integrating layout-aware vision models and LLM-based
 **Why Our Approach is Better:**  
 Most tools end at unstructured text extraction. We deliver structured, verified, actionable health records, integrating directly into patient reminders and insurance claims—making it a truly intelligent prescription management solution.
 
----
+![Workflow](ocrmodelarchitecture.png)
 
 ### 🩺 Doctor Voice Assistant: Verified Voice-to-Prescription System
 
@@ -83,7 +83,7 @@ Unlike typical voice-to-text systems, this module incorporates a structured pipe
 **Why Our Approach Stands Out:**  
 It introduces an enforceable, secure approval mechanism for doctors that most existing solutions lack. This makes it practical for telehealth, small clinics, and multilingual environments where errors can have high stakes.
 
----
+![Workflow](voicetotextdoctor.png)
 
 ### 💊 Intelligent Medication Reminder and Notification System
 
