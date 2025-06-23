@@ -1,4 +1,4 @@
-# Lazarus: AI-Powered Healthcare Operating System
+# Lazarus: Healthcare Operating System
 
 **Team:** Lazarus  
 **Team Leader:** Nitish Kumar Sah  
@@ -9,105 +9,166 @@
 
 ## Overview
 
-Lazarus is an AI-driven healthcare operating system aimed at digitizing and unifying patient medical records across urban and rural settings in India. It leverages OCR, NLP, voice assistants, and predictive models to reduce paperwork, improve compliance, and enable early disease detection through data-driven insights :contentReference[oaicite:0]{index=0}.
+Lazarus is an AI-first healthcare operating system designed to digitize, unify, and intelligently manage patient medical records across India—spanning both rural and urban landscapes. It harnesses cutting-edge OCR, voice assistants, LLMs, and predictive analytics to streamline workflows, reduce errors, and enable preventive care through structured data and actionable insights. A key mission of Lazarus is to replace fragmented, paper-based healthcare systems with secure, intelligent, and patient-centric digital ecosystems.
 
 ---
 
 ## Video Pitch
 
-A 2-minute pitch introducing the problem, solution, and Gen-AI relevance is available on YouTube:
+Watch our 2-minute pitch that outlines the core problem, our Gen-AI-powered solution, and its potential real-world impact:
 
-- **Watch here:** https://youtu.be/M_L52M-dmTI?si=hDHIX0M11_pDzJzH
-
----
+📺 **Watch here:** https://youtu.be/M_L52M-dmTI?si=hDHIX0M11_pDzJzH
 
 ---
 
-## Architecture and Workflow
+## System Architecture and Workflow
 
-The following diagrams provide a high-level view of Lazarus' system architecture and end-to-end workflow:
-
-### 🏗️ System Architecture
+### 🏗️ Architecture Diagram
 
 ![System Architecture](Architecture.png)
 
-This diagram shows how various components—OCR, voice assistants, backend APIs, patient apps, and predictive models—interact with the centralized Health Record Vault, ensuring secure and seamless healthcare data flow.
+Shows the integration of OCR, voice transcription, NLP pipelines, doctor verification systems, backend APIs, patient mobile/web apps, predictive AI models, and insurance claim modules—all connected to a secure Health Record Vault.
 
-### 🔄 Workflow
+### 🔄 Workflow Overview
 
 ![Workflow](WorkFlow.jpeg)
 
-From the patient’s visit to the hospital to follow-up and predictive alerts, this diagram outlines the journey of data through OCR scanning, voice transcription, digital storage, and AI-powered analysis.
+Illustrates the data journey: patient consultation, digitization of records, structured extraction, verification, reminders, analytics, and insurance integration.
 
 ---
 
+## Core Functional Modules
 
+---
+
+### 🧾 Medical Prescription Digitization & Automation
+
+**About the Product:**  
+This module converts handwritten or printed prescriptions into structured digital records, verified by doctors and ready for downstream use such as reminders and insurance claims. It automates data entry, enhances compliance, and transforms prescriptions into actionable healthcare tools.
+
+**Technical Workflow:**  
+1. User uploads prescription image.  
+2. Image enhancement (de-skewing, denoising).  
+3. **Visual Transformer (e.g., LayoutLMv3/LLaVA)** segments the document into header, body, footer.  
+4. A **fine-tuned LLM (e.g., Ollama)** semantically parses the content.  
+5. Doctor details are verified using **SurePass API**.  
+6. Medicines and instructions are converted into structured JSON.  
+7. Smart medication reminders are scheduled based on timing instructions.  
+8. Verified data is stored for future use and insurance submission.
+
+**Why This is Better:**  
+It goes beyond basic OCR by integrating layout-aware vision models and LLM-based contextual understanding. This enables accurate parsing of complex handwritten content and adds functionality like doctor verification and automated reminder scheduling.
+
+**Why Our Approach is Better:**  
+Most tools end at unstructured text extraction. We deliver structured, verified, actionable health records, integrating directly into patient reminders and insurance claims—making it a truly intelligent prescription management solution.
+
+---
+
+### 🩺 Doctor Voice Assistant: Verified Voice-to-Prescription System
+
+**About the Product:**  
+This tool enables doctors to dictate prescriptions, which are instantly transcribed and structured into verified digital records. It supports multilingual input and ensures each prescription is authenticated via SMS/email-based verification within 10 hours.
+
+**Technical Workflow:**  
+1. Voice captured via app/web interface.  
+2. Transcription via **Whisper** or **Google Speech-to-Text**.  
+3. Segmentation into doctor, patient, diagnosis, and medication sections using NLP.  
+4. Doctor signs digitally; a secure verification link is sent via **Twilio/SMTP**.  
+5. Time-bound (10-hour) verification ensures traceability and integrity.  
+6. Summarized prescription generated and stored securely.
+
+**Why This is Better:**  
+Unlike typical voice-to-text systems, this module incorporates a structured pipeline with multilingual support, simplified summaries, and mandatory verification—striking a balance between efficiency and safety.
+
+**Why Our Approach Stands Out:**  
+It introduces an enforceable, secure approval mechanism for doctors that most existing solutions lack. This makes it practical for telehealth, small clinics, and multilingual environments where errors can have high stakes.
+
+---
+
+### 💊 Intelligent Medication Reminder and Notification System
+
+**About the Product:**  
+A multi-channel reminder system that allows patients to receive alerts based on prescription schedules or custom input. Alerts are synced with Google Calendar and delivered via SMS or WhatsApp, supporting real-world adherence to medication.
+
+**Technical Workflow:**  
+1. Prescription uploaded and parsed using the OCR+LLM pipeline.  
+2. Medicines, dosages, and schedules extracted.  
+3. Reminders created and pushed to Google Calendar.  
+4. Notifications sent via SMS/WhatsApp using APIs.  
+5. Users can manually add, snooze, or mark reminders as taken.  
+6. All medication activity is logged for future reference.
+
+**Why This is Better:**  
+Combines automation with flexibility, ensuring timely medication via platforms users already use. No need for manual entry or mobile-only usage.
+
+**Why Our Approach Wins:**  
+Other systems either offer rigid, manual entry workflows or limited alert options. Ours provides structured extraction from real prescriptions and integrates reminders across channels, tailored for both individual patients and caregivers.
+
+---
+
+### 🧠 Smart Healthcare Assistant with Integrated Insurance Claim Support
+
+**About the Product:**  
+A centralized assistant that helps patients track diagnoses, treatments, and submit documentation for insurance claims without manual paperwork. It bridges clinical care and financial access through intelligent automation.
+
+**Technical Workflow:**  
+1. Structured data extracted from records using Visual Transformer + LLM.  
+2. Records stored and categorized.  
+3. At diagnosis, user selects documents to send to insurers via verified APIs.  
+4. Insurance policies fetched and linked to the user profile.  
+5. Reminders generated automatically from prescription data.
+
+**Why This is Better:**  
+It unifies clinical records and insurance processes—offering a seamless experience from treatment to claim submission. Saves time during emergencies and ensures better health-finance coordination.
+
+**Why Our Approach is Unique:**  
+Unlike isolated apps, Lazarus integrates insurance workflows into patient health tracking—automating the most error-prone parts of the claim process.
+
+---
 
 ## Framework Document
 
-The full 2-page framework PDF is included in this repository:
+The comprehensive 2-page framework is available in the repository:
 
-- **Document:** `Lazarus_Nitish Kumar Sah_Jazzee2025_Document.pdf`
+📄 **Download:** `Lazarus_Nitish Kumar Sah_Jazzee2025_Document.pdf`
 
-It covers:
-
-1. **Problem Statement**  
-2. **Target Audience & Context**  
-3. **Use of Generative AI**  
-4. **Solution Framework / Workflow**  
-5. **Feasibility & Execution**  
-6. **Scalability & Impact**  
-7. **Conclusion & Minimum Lovable Product (MLP)** :contentReference[oaicite:1]{index=1}
-
----
-
-## Key Sections (from Framework Document)
-
-### 1. Problem Statement
-Over 65% of medical records in India remain paper-based, scattered, or lost, causing redundant tests, delayed diagnoses, and increased physician workload. This leads to missed follow-ups (e.g., insulin patients undiagnosed for months) and poorer outcomes :contentReference[oaicite:2]{index=2}.
-
-### 2. Target Audience & Context
-- **Patients** in urban hospitals and rural clinics lacking unified history access.  
-- **Physicians and Nurses** burdened by paperwork, needing more patient-facing time.  
-- **Rural Health Workers (ASHAs/ANMs):** Often offline, using pen-and-paper; require local-language, voice-enabled tools.  
-- **Health Systems:** Seeking quality data for improved care and reduced inter-facility errors :contentReference[oaicite:3]{index=3}.
-
-### 3. Use of Generative AI
-- **Digitize Paper Records:** OCR transforms handwritten prescriptions and reports into structured data.  
-- **Understand Medical Language:** NLP interprets symptoms, diagnoses, case notes from unstructured sources.  
-- **Voice-to-Text for Doctors:** Instant structured summary generation to reduce burnout.  
-- **Patient AI Assistant:** Voice and medication reminders with local-language support for better compliance.  
-- **Forecast Disease Risks:** Analyze longitudinal records for early warning signs and prompt interventions :contentReference[oaicite:4]{index=4}.
-
-### 4. Solution Framework / Workflow
-1. **Patient Visit:** Initiates at clinic/hospital (urban or rural).  
-2. **Health Record Vault:** Secure, unified repository of digital medical history.  
-3. **OCR & Document Parser:** Scans paper records into analysable digital format.  
-4. **Doctor Assistant:** Real-time voice-to-text for prescriptions and summaries.  
-5. **Patient Web/Mobile App:** Reminders, daily health diary, confirmation via voice/camera in local language.  
-6. **Offline Support for ASHAs/ANMs:** Voice-enabled data intake and summary access without internet.  
-7. **Predictive AI Engine:** Long-term trend analysis to trigger early warnings (e.g., diabetes, cardiovascular risk).  
-8. **Integration Hub:** Sync with wearables, labs, and insurance platforms for seamless data flow :contentReference[oaicite:5]{index=5}.
-
-### 5. Feasibility & Execution
-- **Frontend:** Next.js + TypeScript for responsive UI.  
-- **Backend:** Django REST Framework + PostgreSQL for secure, scalable operations.  
-- **Cloud Infrastructure:** AWS/GCP for compliance and reliability.  
-- **OCR/NLP:** Open-source tools like Tesseract and Hugging Face models.  
-- **Predictive Models:** LSTM, XGBoost on patient history for risk forecasting :contentReference[oaicite:6]{index=6}.
-
-### 6. Scalability & Impact
-- Automates physician workflows across urban hospitals and rural clinics.  
-- Empowers ASHAs/ANMs with offline voice tools in local languages.  
-- Patients benefit via improved drug compliance, reduced errors, early detection.  
-- Potential to lower treatment costs by up to 30% through preventive care according to WHO :contentReference[oaicite:7]{index=7}.
-
-### 7. Conclusion & Minimum Lovable Product (MLP)
-The MLP includes:
-- **Doctor Voice Assistant:** Instant voice-to-text for prescriptions and summaries.  
-- **Patient Reminder App:** Medication and follow-up notifications with local-language support.  
-- **OCR Tool:** Scanning and digitizing paper records for small clinics.  
-This ready-to-test package can be piloted in select clinics, forming the foundation for a scalable, national healthcare environment :contentReference[oaicite:8]{index=8}.
+Includes:
+- Problem Definition  
+- User Context  
+- Gen-AI Relevance  
+- System Workflow  
+- Tech Stack  
+- Feasibility & Scalability  
+- MLP (Minimum Lovable Product)
 
 ---
 
+## Feasibility and Tech Stack
+
+- **Frontend:** React / Flutter (responsive, multilingual support)  
+- **Backend:** FastAPI / Django REST Framework + PostgreSQL  
+- **AI/NLP Models:** Hugging Face LLMs, Tesseract, Whisper, LayoutLMv3, Ollama  
+- **Cloud Infra:** AWS / GCP with encryption and logging  
+- **Integrations:** SurePass API, Twilio, SMTP, Google Calendar, Insurance APIs
+
+---
+
+## Scalability & Impact
+
+- Enables doctor efficiency and reduces burnout.  
+- Empowers rural healthcare workers with offline voice tools.  
+- Supports better adherence and reduces readmission.  
+- Facilitates real-time insurance processing.  
+- WHO-estimated 30% treatment cost reduction through prevention and compliance.
+
+---
+
+## Minimum Lovable Product (MLP)
+
+The Lazarus MLP includes:
+- **Verified Voice-to-Prescription Tool**  
+- **AI-Powered Prescription Digitization Tool**  
+- **Smart Reminder System**  
+- **Integrated Insurance Submission Module**
+
+This ready-to-deploy suite can be piloted in small clinics or rural health centers—creating a path toward scalable, intelligent digital healthcare across India.
